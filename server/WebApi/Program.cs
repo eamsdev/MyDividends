@@ -39,8 +39,4 @@ app.UseAuthorization();
 app.MapControllers().RequireAuthorization();
 app.Run();
 
-
-namespace WebApi
-{
-    public partial class Program { }
-}
+public partial class Program { }

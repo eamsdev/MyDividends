@@ -17,7 +17,7 @@ public static class DependencyInjection
     public static IServiceCollection AddWebServices(this IServiceCollection services)
     {
         return services
-            .AddApi()
+            .AddApiDoc()
             .AddAuth()
             .AddProblemDetails()
             .AddCors(ConfigureCors)
@@ -68,7 +68,7 @@ public static class DependencyInjection
             .AddAuthorization()
             .AddAuthentication(IdentityConstants.ApplicationScheme)
             .AddCookie(IdentityConstants.ApplicationScheme, ConfigureCookie)
-            .AddCookie(IdentityConstants.ExternalScheme)
+            .AddCookie(IdentityConstants.ExternalScheme, ConfigureCookie)
             .AddCookie(IdentityConstants.TwoFactorUserIdScheme);
         
         services.AddIdentityCore<ApplicationUser>()
@@ -83,7 +83,7 @@ public static class DependencyInjection
     {
         options.Cookie.HttpOnly = true;
         options.Cookie.SameSite = SameSiteMode.None;
-        options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
+        options.Cookie.SecurePolicy = CookieSecurePolicy.SameAsRequest;
         options.Events.OnRedirectToLogin = c =>
         {
             c.Response.StatusCode = StatusCodes.Status401Unauthorized;
@@ -91,7 +91,7 @@ public static class DependencyInjection
         };
     }
 
-    private static IServiceCollection AddApi(this IServiceCollection services)
+    private static IServiceCollection AddApiDoc(this IServiceCollection services)
     {
         services.AddEndpointsApiExplorer()
             .AddSwaggerGen()
