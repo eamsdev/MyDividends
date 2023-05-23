@@ -11,6 +11,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <PackageReference Include="Ardalis.Specification.EntityFrameworkCore" Version="6.1.0" />
       <PackageReference Include="GraphQL.Client" Version="6.0.0" />
       <PackageReference Include="GraphQL.Client.Serializer.SystemTextJson" Version="6.0.0" />
       <PackageReference Include="GraphQL.Query.Builder" Version="2.0.1" />
@@ -21,6 +22,7 @@
         <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       </PackageReference>
       <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.5" />
+      <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="7.0.0" />
     </ItemGroup>
 
 </Project>

@@ -1,9 +1,14 @@
-﻿using Application.Interfaces;
+﻿using Application.Features.Dividends.Interfaces;
+using Application.Interfaces;
+using Ardalis.Specification;
 using Infrastructure.Identity;
 using Infrastructure.Persistence;
+using Infrastructure.Providers.Morningstar;
+using Infrastructure.Workers;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 
 namespace Infrastructure;
 
@@ -13,6 +18,12 @@ public static class DependencyInjection
     {
         return services
             .AddDb(config)
+            .AddHostedService(sp => new PeriodicHostedService(
+                sp, sp.GetRequiredService<ILogger<PeriodicHostedService>>()))
+            .AddScoped(typeof(IRepositoryBase<>), typeof(DbSetRepository<>))
+            .AddScoped(typeof(IReadRepositoryBase<>), typeof(DbSetRepository<>))
+            .AddAutoMapper(typeof(DependencyInjection).Assembly)
+            .AddTransient(typeof(ISecuritiesInfoProvider), typeof(SecuritiesInfoProvider))
             .AddTransient<IIdentityService, IdentityService>();
     }
     

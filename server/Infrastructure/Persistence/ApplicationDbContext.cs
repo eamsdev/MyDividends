@@ -1,4 +1,5 @@
 ﻿using System.Reflection;
+using Domain.Entities;
 using Infrastructure.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -11,6 +12,7 @@ public class ApplicationDbContext : IdentityDbContext
     { }
     
     
+    public DbSet<Security> Securities { get; set; }
     public DbSet<ApplicationUser> ApplicationUsers { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
