@@ -1,7 +1,7 @@
 ﻿using Ardalis.Specification;
 using Domain.Entities;
 
-namespace Application.Features.Dividends.Specifications;
+namespace Application.Features.Dividend.Specifications;
 
 public sealed class SecurityByTickerAndExchange : SingleResultSpecification<Security>
 {

@@ -1,5 +1,5 @@
 ﻿using System.Reflection;
-using Application.Features.Dividends;
+using Application.Features.Dividend;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Application;

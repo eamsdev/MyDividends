@@ -1,6 +1,6 @@
 ﻿using Domain.Entities;
 
-namespace Application.Features.Dividends.Interfaces;
+namespace Application.Features.Dividend.Interfaces;
 
 public interface ISecuritiesInfoProvider
 {

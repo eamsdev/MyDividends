@@ -1,4 +1,4 @@
-﻿using Application.Features.Dividends;
+﻿using Application.Features.Dividend;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;

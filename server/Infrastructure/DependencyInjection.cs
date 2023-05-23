@@ -1,4 +1,4 @@
-﻿using Application.Features.Dividends.Interfaces;
+﻿using Application.Features.Dividend.Interfaces;
 using Application.Interfaces;
 using Ardalis.Specification;
 using Infrastructure.Identity;

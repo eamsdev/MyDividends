@@ -1,4 +1,5 @@
 ﻿using Application.Features;
+using Application.Features.Identity;
 using Application.Interfaces;
 using Infrastructure.Identity;
 using MediatR;

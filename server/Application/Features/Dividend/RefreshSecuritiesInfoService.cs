@@ -1,10 +1,10 @@
-﻿using Application.Features.Dividends.Interfaces;
-using Application.Features.Dividends.Specifications;
+﻿using Application.Features.Dividend.Interfaces;
+using Application.Features.Dividend.Specifications;
 using Ardalis.Specification;
 using Domain.Entities;
 using Microsoft.Extensions.Logging;
 
-namespace Application.Features.Dividends;
+namespace Application.Features.Dividend;
 
 public class RefreshSecuritiesInfoService
 {
@@ -31,7 +31,6 @@ public class RefreshSecuritiesInfoService
         var securityMatchingSetSpec = new SecuritiesMatchingGivenSet(distinctSecurities);
         var existingEntities = await _repository.ListAsync(securityMatchingSetSpec, token);
         
-
         foreach (var existingEntity in existingEntities)
         {
             var updatedSecurity = distinctSecurities.Single(x =>
@@ -43,7 +42,6 @@ public class RefreshSecuritiesInfoService
         
         await _repository.AddRangeAsync(distinctSecurities, token);
         await _repository.SaveChangesAsync(token);
-        
         
         _logger.LogInformation("{ExistingSecuritiesCount} existing securities are updated", 
             existingEntities.Count);

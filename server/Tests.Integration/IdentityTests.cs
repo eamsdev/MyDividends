@@ -1,5 +1,6 @@
 ﻿using System.Net;
 using Application.Features;
+using Application.Features.Identity;
 using FluentAssertions;
 using Tests.Integration.Extensions;
 using WebApi.Features;

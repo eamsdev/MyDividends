@@ -1,4 +1,4 @@
-﻿using Application.Features.Dividends.Interfaces;
+﻿using Application.Features.Dividend.Interfaces;
 using AutoMapper;
 using Domain.Entities;
 using GraphQL;

@@ -1,8 +1,7 @@
-﻿using System.Security.Authentication;
-using Application.Interfaces;
+﻿using Application.Interfaces;
 using MediatR;
 
-namespace Application.Features;
+namespace Application.Features.Identity;
 
 public static class RegisterUser
 {
